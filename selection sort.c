@@ -32,18 +32,18 @@ int print(int v[]){
 
 int ss(int v[]){
   int i = t-1, min = v[i], hp = i, b = 0;
-  while(b != t){
-    for(i = t-1; i >= b; i--){
-      if(v[i] < min){
-        min = v[i];
-        hp = i;
+  while(b != t){ // condiçao de parada
+    for(i = t-1; i >= b; i--){ // navegar no vetor
+      if(v[i] < min){ // condiçao para selecionar os parametros a serem armazenados
+        min = v[i]; // armazenar valor minimo
+        hp = i; // armazenar posiçao no minimo
       }      
     }
-    v[hp] = v[b];
-    v[b] = min; 
-    min = v[t-1];
-    hp = t-1;
-    b++;
+    v[hp] = v[b]; //inicio da troca, trocando o menor encontrado pelo armazenado na posiçao considerada inferior
+    v[b] = min;  // da à posiçao inferior o valor do minimo
+    min = v[t-1]; // atualiza o minimo para o ultimo valor do vetor dnv
+    hp = t-1; // atualiza a posiçao para a ultima do vetor dnv
+    b++; // incrementa o criterio de parada e sobe o valor da posicáo considerada inferior
   // print(v);
   }
   return 0;
